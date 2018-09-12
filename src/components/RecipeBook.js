@@ -151,22 +151,27 @@ class RecipeBook extends Component {
 
     render() {
         return (
-            <main className="clearfix recipe-book-container wrapper">
-                <div className="recipe-book-header clearfix">
-                    <Link to="/Finder">
-                        <button>Back to Search</button>
-                    </Link>
-                    <h2>Your Recipes</h2>
-                    <img src="/assets/beerbible_open.png" alt="open beer bible"></img>
+            <main className="clearfix recipe-book-container">
+                <div className="recipe-book-header">
+                    <div className="wrapper-header clearfix">
+                        <Link to="/Finder">
+                            <button>Back to Search</button>
+                        </Link>
+                        <h2>Your Beer Bible</h2>
+                        <img src="/assets/beerbible_open.png" alt="open beer bible"></img>
+                    </div>
                 </div>
 
-                <aside className="beers-list">
-                    {this.state.beersList.map((beer) => {
-                        return (
-                            <div className="beer-box-wrapper clearfix">
-                                <div onClick={() => { this.displayFullRecipe(beer) }} className="beer-box" key={beer.key}>
-                                    <h4>{beer.name}</h4>
-                                    {/* <p>{beer.brewersTips}</p> */}
+                <div className="wrapper">
+                    <aside className="beers-list">
+                        {this.state.beersList.map((beer) => {
+                            return (
+                                <div className="beer-box-wrapper clearfix">
+                                    <div onClick={() => { this.displayFullRecipe(beer) }} className="beer-box" key={beer.key}>
+                                        <h4>{beer.name}</h4>
+                                        {/* <p>{beer.brewersTips}</p> */}
+                                    </div>
+                                    <button onClick={() => this.deleteRecipe(beer.name)} id={beer.key}><i class="fas fa-trash-alt"></i></button>
                                 </div>
                                 <button onClick={() => this.deleteRecipe(beer.name)} id={beer.key}><i class="fas fa-trash-alt"></i></button>
                             </div>

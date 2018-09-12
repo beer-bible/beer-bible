@@ -275,18 +275,10 @@ body {
   background-attachment: fixed;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/assets/brick-wall.jpg); }
 
-header {
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat; }
-
 .logoBig {
-  display: block;
-  margin: 0 auto;
   font-family: "neontubes";
   font-size: 10vw;
-  text-align: center;
-  white-space: nowrap; }
+  text-align: center; }
   @media (max-width: 1024px) {
     .logoBig {
       font-size: 22vh;
@@ -295,12 +287,20 @@ header {
     .logoBig {
       font-size: 23vh;
       letter-spacing: 12px; } }
+  @media (max-width: 768px) {
+    .logoBig {
+      font-size: 17vw; } }
   @media (max-width: 550px) {
     .logoBig {
       font-size: 20vw; } }
   @media (max-width: 375px) {
     .logoBig {
       font-size: 20vw; } }
+  .logoBig .beerBible {
+    transform: rotate(-1deg);
+    color: #fdd0d0;
+    text-shadow: 0 0 0 transparent, 0 0 10px #b10707, 0 0 20px rgba(177, 7, 7, 0.5), 0 0 40px #b10707, 0 0 100px #b10707, 0 0 200px #b10707, 0 0 300px #b10707, 0 0 500px #b10707, 0 0 1000px #b10707;
+    animation: blink 4s infinite alternate; }
   .logoBig .beer {
     position: relative; }
   .logoBig .bible {
@@ -313,26 +313,21 @@ header {
     @media (max-width: 960px) {
       .logoBig .bible {
         top: 44%; } }
+    @media (max-width: 768px) {
+      .logoBig .bible {
+        top: 32%; } }
     @media (max-width: 550px) {
       .logoBig .bible {
         top: 25%; } }
     @media (max-width: 375px) {
       .logoBig .bible {
         top: 28%; } }
-  .logoBig .beerBible {
-    transform: rotate(-1deg);
-    color: #fdd0d0;
-    text-shadow: 0 0 0 transparent, 0 0 10px #b10707, 0 0 20px rgba(177, 7, 7, 0.5), 0 0 40px #b10707, 0 0 100px #b10707, 0 0 200px #b10707, 0 0 300px #b10707, 0 0 500px #b10707, 0 0 1000px #b10707;
-    animation: blink 4s infinite alternate; }
 
 .logoSmall {
   display: block;
   margin: 0 auto;
-  margin-top: 150px;
   width: 35%;
-  font-family: "neontubes";
-  text-align: center;
-  white-space: nowrap; }
+  margin-top: 150px; }
   @media (max-width: 1024px) {
     .logoSmall {
       width: 50%;
@@ -341,6 +336,9 @@ header {
     .logoSmall {
       width: 55%;
       margin-top: 142px; } }
+  @media (max-width: 768px) {
+    .logoSmall {
+      margin-top: 120px; } }
   @media (max-width: 550px) {
     .logoSmall {
       width: 100%;
@@ -351,17 +349,16 @@ header {
       width: 97%; } }
   .logoSmall .signUp,
   .logoSmall .logIn {
-    display: block;
-    float: left;
-    margin: 0 15px;
-    transform: translateZ(0) translate3D(0, 0, 0);
-    backface-visibility: hidden;
-    will-change: opacity;
-    transform: rotate(1deg);
     font-family: "neontubes";
     font-size: 3vw;
     text-decoration: none;
     color: #d4eaff;
+    display: block;
+    float: left;
+    margin: 0 15px;
+    transform: translateZ(0) translate3D(0, 0, 0);
+    will-change: opacity;
+    transform: rotate(1deg);
     text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
     animation: buzz 0.01s infinite alternate; }
     @media (max-width: 1024px) {
@@ -379,144 +376,81 @@ header {
 
 .signUpForm,
 .logInForm {
-  margin: 0 auto;
-  display: block;
-  margin-top: 40px;
-  width: 100%; }
-  @media (max-width: 960px) {
-    .signUpForm,
-    .logInForm {
-      margin-top: 20px;
-      width: 100%; } }
-  .signUpForm div,
-  .logInForm div {
-    float: left;
-    width: 33.3%; }
-  @media (max-width: 550px) {
-    .signUpForm .emailContainer,
-    .signUpForm .passwordContainer,
-    .signUpForm .confirmContainer,
-    .logInForm .emailContainer,
-    .logInForm .passwordContainer,
-    .logInForm .confirmContainer {
-      width: 100%;
-      margin: 30px 0; } }
-  @media (max-width: 550px) {
-    .signUpForm .emailContainer .email,
-    .signUpForm .passwordContainer .email,
-    .signUpForm .confirmContainer .email,
-    .logInForm .emailContainer .email,
-    .logInForm .passwordContainer .email,
-    .logInForm .confirmContainer .email {
-      width: 75%; } }
-  @media (max-width: 550px) {
-    .signUpForm .emailContainer .confirm,
-    .signUpForm .passwordContainer .confirm,
-    .signUpForm .confirmContainer .confirm,
-    .logInForm .emailContainer .confirm,
-    .logInForm .passwordContainer .confirm,
-    .logInForm .confirmContainer .confirm {
-      width: 67%; } }
-  .signUpForm .emailContainer label,
-  .signUpForm .passwordContainer label,
-  .signUpForm .confirmContainer label,
-  .logInForm .emailContainer label,
-  .logInForm .passwordContainer label,
-  .logInForm .confirmContainer label {
+  margin-top: 30px; }
+  .signUpForm label,
+  .logInForm label {
     font-family: "neontubes";
     font-size: 2vw;
     color: #fefefe;
     text-transform: uppercase;
     text-shadow: 0 0 0 transparent, 0 0 10px #fafafa, 0 0 20px rgba(250, 250, 250, 0.5), 0 0 40px #fafafa, 0 0 100px #fafafa, 0 0 200px #fafafa, 0 0 300px #fafafa, 0 0 500px #fafafa; }
     @media (max-width: 960px) {
-      .signUpForm .emailContainer label,
-      .signUpForm .passwordContainer label,
-      .signUpForm .confirmContainer label,
-      .logInForm .emailContainer label,
-      .logInForm .passwordContainer label,
-      .logInForm .confirmContainer label {
+      .signUpForm label,
+      .logInForm label {
         font-size: 1.5vw; } }
+    @media (max-width: 768px) {
+      .signUpForm label,
+      .logInForm label {
+        font-size: 3vw; } }
     @media (max-width: 550px) {
-      .signUpForm .emailContainer label,
-      .signUpForm .passwordContainer label,
-      .signUpForm .confirmContainer label,
-      .logInForm .emailContainer label,
-      .logInForm .passwordContainer label,
-      .logInForm .confirmContainer label {
+      .signUpForm label,
+      .logInForm label {
         font-size: 5vw; } }
   .signUpForm input,
   .logInForm input {
     color: white;
     font-size: 20px;
-    letter-spacing: 4px;
     text-transform: uppercase;
     background: none;
-    margin: 0 10px;
-    width: 50%;
     padding: 8px 0;
     border: none;
     box-shadow: 0 4px 2px -2px #fdc0c0; }
-    @media (max-width: 375px) {
-      .signUpForm input,
-      .logInForm input {
-        width: 60%; } }
-  .signUpForm .logInEmail,
-  .signUpForm .logInPassword,
-  .logInForm .logInEmail,
-  .logInForm .logInPassword {
-    width: 50%; }
-    @media (max-width: 375px) {
-      .signUpForm .logInEmail,
-      .signUpForm .logInPassword,
-      .logInForm .logInEmail,
-      .logInForm .logInPassword {
-        width: 69%; } }
-  @media (max-width: 550px) {
-    .signUpForm .logInPassword,
-    .logInForm .logInPassword {
-      width: 55%; } }
   .signUpForm button,
   .logInForm button {
     font-family: "neontubes";
     font-size: 2vw;
     color: #fdc0c0;
     text-transform: uppercase;
-    text-shadow: 0 0 0 transparent, 0 0 10px #b10707, 0 0 20px rgba(177, 7, 7, 0.5), 0 0 40px #b10707, 0 0 100px #b10707, 0 0 200px #b10707, 0 0 300px #b10707, 0 0 500px #b10707;
     border: none;
     background: none;
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-shadow: 0 0 0 transparent, 0 0 10px #b10707, 0 0 20px rgba(177, 7, 7, 0.5), 0 0 40px #b10707, 0 0 100px #b10707, 0 0 200px #b10707, 0 0 300px #b10707, 0 0 500px #b10707;
     transition: 1s all ease; }
     @media (max-width: 960px) {
       .signUpForm button,
       .logInForm button {
-        font-size: 1.5vw; } }
+        font-size: 1.5vw;
+        padding-top: 20px; } }
+    @media (max-width: 768px) {
+      .signUpForm button,
+      .logInForm button {
+        font-size: 4vw;
+        padding-top: 30px; } }
     @media (max-width: 550px) {
       .signUpForm button,
       .logInForm button {
         font-size: 6.5vw;
-        display: block;
-        margin: 30px auto; } }
+        padding-top: 20px; } }
     .signUpForm button:hover,
     .logInForm button:hover {
       color: #d4eaff;
       text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff; }
 
-.logInForm {
-  width: 60%; }
-  @media (max-width: 960px) {
-    .logInForm {
-      width: 70%; } }
-  @media (max-width: 550px) {
-    .logInForm {
+.signUpForm div {
+  width: 33.3%;
+  float: left; }
+  @media (max-width: 768px) {
+    .signUpForm div {
       width: 100%; } }
-  @media (max-width: 960px) {
-    .logInForm label {
-      font-size: 2vw; } }
-  @media (max-width: 960px) {
-    .logInForm button {
-      font-size: 2vw; } }
-  @media (max-width: 550px) {
-    .logInForm button {
-      font-size: 6.5vw; } }
+
+.logInForm div {
+  width: 50%;
+  float: left; }
+  @media (max-width: 768px) {
+    .logInForm div {
+      width: 100%; } }
 
 @keyframes buzz {
   70% {
@@ -645,6 +579,10 @@ header {
     .search-results .beer-item .info-button,
     .search-results .beer-item .add-button {
       background: transparent; }
+      .search-results .beer-item .info-button:hover i,
+      .search-results .beer-item .add-button:hover i {
+        animation: pulse 2s infinite;
+        text-shadow: -0.2rem -0.2rem 1rem #2695ff, 0.2rem 0.2rem 1rem #2695ff, 0 0 2rem #2695ff, 0 0 4rem #2695ff, 0 0 6rem #2695ff, 0 0 8rem #2695ff, 0 0 10rem #2695ff; }
     .search-results .beer-item .info-button i,
     .search-results .beer-item .add-button i {
       font-size: 4.2rem;
@@ -666,6 +604,7 @@ header {
   color: #00245b;
   padding: 3%;
   position: fixed;
+  z-index: 3;
   width: 70%;
   top: 50%;
   left: 50%;
@@ -676,13 +615,17 @@ header {
     width: 33%;
     float: left; }
   .beer-item-modal .close-modal-button {
-    background: transparent; }
+    background: transparent;
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+    top: 20px; }
+    .beer-item-modal .close-modal-button:hover i {
+      color: #ffb300;
+      animation: spin 2s infinite; }
   .beer-item-modal .close-modal-button i {
     font-size: 4.2rem;
     color: #00245b;
-    position: absolute;
-    right: 20px;
-    top: 20px;
     transition: all 0.2s ease-in; }
     .beer-item-modal .close-modal-button i:hover {
       color: #ffb300;
@@ -773,85 +716,80 @@ header {
 
 .recipe-book-header {
   width: 100%;
-  background-image: url(/assets/header-wood.jpg);
-  border-radius: 10px;
+  height: 120px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 2;
   margin-bottom: 10px; }
-  .recipe-book-header button {
+
+.wrapper-header {
+  width: 90%;
+  height: 120px;
+  max-width: 1500px;
+  margin: 0 auto; }
+  .wrapper-header button {
     float: left;
     padding: 15px;
-    margin: 45px 0 45px 15px;
-    border: 1px solid #00245b; }
+    border: 3px solid #ffb300;
+    transition: 0.25s;
+    font-size: 2.5rem;
+    margin-top: 25px; }
+    .wrapper-header button:hover, .wrapper-header button:focus {
+      box-shadow: inset 0 -3.25em 0 0 #ffb300;
+      border-color: #ffb300;
+      color: #fff; }
     @media (max-width: 768px) {
-      .recipe-book-header button {
-        margin: 45px 5%;
-        padding: 10px 10px; } }
+      .wrapper-header button {
+        margin: 30px 2% 30px 0;
+        padding: 10px 10px;
+        font-size: 15px; } }
     @media (max-width: 550px) {
-      .recipe-book-header button {
-        margin: 15px 15px 10px;
-        font-size: 15px;
-        width: 50%; } }
+      .wrapper-header button {
+        margin-top: 25px;
+        width: 25%; } }
     @media (max-width: 375px) {
-      .recipe-book-header button {
+      .wrapper-header button {
         margin: 15px 5% 10px;
         font-size: 15px;
         width: 50%; } }
     @media (max-width: 320px) {
-      .recipe-book-header button {
+      .wrapper-header button {
         padding: 5px;
         width: 80%;
-        margin: 10px 10%; } }
-  .recipe-book-header h2 {
+        margin: 10px 0; } }
+  .wrapper-header h2 {
     float: left;
-    padding: 20px 0 0 20px;
+    margin-left: 50px;
+    margin-top: 35px;
     text-shadow: 1px 1px 5px white; }
     @media (max-width: 768px) {
-      .recipe-book-header h2 {
-        margin: 45px 10px;
+      .wrapper-header h2 {
+        margin: 35px 10px;
         padding: 0; } }
     @media (max-width: 550px) {
-      .recipe-book-header h2 {
-        padding: 0 120px 10px 15px;
+      .wrapper-header h2 {
+        padding: 30px 20px 0 0;
         margin: 0 auto; } }
     @media (max-width: 375px) {
-      .recipe-book-header h2 {
-        margin: 0 auto; } }
+      .wrapper-header h2 {
+        padding: 30px 0 0 0;
+        font-size: 20px; } }
     @media (max-width: 320px) {
-      .recipe-book-header h2 {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        text-align: center; } }
-  .recipe-book-header img {
+      .wrapper-header h2 {
+        font-size: 20px; } }
+  .wrapper-header img {
     float: right;
-    width: 180px;
-    padding: 1%; }
+    width: 120px;
+    padding-top: 15px; }
     @media (max-width: 768px) {
-      .recipe-book-header img {
-        position: relative;
-        width: 120px;
-        margin: 20px 0; } }
+      .wrapper-header img {
+        width: 105px;
+        padding-top: 20px; } }
     @media (max-width: 550px) {
-      .recipe-book-header img {
-        margin-top: 0;
-        position: absolute;
-        right: 10px;
-        width: 120px;
+      .wrapper-header img {
         float: right;
-        margin-right: 20px;
-        padding-bottom: 10px; } }
-    @media (max-width: 375px) {
-      .recipe-book-header img {
-        width: 100px;
-        float: right;
-        top: 20px;
-        margin-right: 20px; } }
-    @media (max-width: 320px) {
-      .recipe-book-header img {
-        position: relative;
-        width: 100px;
-        top: 0;
-        float: none;
-        margin: 0 auto; } }
+        padding-top: 15px;
+        margin: 0; } }
 
 .beers-list {
   float: right;
@@ -860,19 +798,18 @@ header {
   overflow: auto;
   background-color: #00778a;
   border-radius: 10px;
-  margin-left: 10px; }
+  margin: 130px 0 0 10px; }
   @media (max-width: 1280px) {
     .beers-list {
       float: left;
       width: 100%;
-      margin: 0 0 10px 0;
+      margin: 130px 0 10px 0;
       padding: 0; } }
   @media (max-width: 1280px) {
     .beers-list .beer-box-wrapper {
       float: left;
       width: 80%;
-      margin: 0 10%;
-      padding: 5px 0; } }
+      margin: 3px 10%; } }
   .beers-list .beer-box-wrapper .beer-box {
     background-color: white;
     cursor: pointer;
@@ -946,6 +883,7 @@ header {
   float: left;
   width: 65%;
   padding: 25px;
+  margin-top: 130px;
   background-color: #ebeae5;
   border-radius: 10px; }
   @media (max-width: 1280px) {
@@ -1030,8 +968,8 @@ header {
     position: absolute;
     width: 320px;
     height: 280px;
-    top: -15%;
-    left: 60%;
+    top: -30%;
+    left: 50%;
     transform: translate(-50%, -50%); }
     .ask-dave .brewer-tips-modal h4, .ask-dave .brewer-tips-modal p {
       padding: 5px 10px 0 25px;
