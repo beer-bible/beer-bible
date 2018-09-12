@@ -57,7 +57,7 @@ class FullRecipe extends Component {
                 <p>{this.props.brewersTips}</p>
 
               </div>
-              <GetFoodRecipes foodPairings={this.props.foodPairings} />
+              <GetFoodRecipes foodSwitch={this.props.foodSwitch} foodSwitchOff={this.props.foodSwitchOff} foodPairings={this.props.foodPairings} />
             </div>
           </section>;
     }

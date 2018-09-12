@@ -16,7 +16,7 @@ class RecipeBook extends Component {
             displayFullRecipe: false,
             beerToDisplay: null,
             beersLeft: 0,
-            something:false
+            foodSwitch:false,
         }
     }
     componentDidMount() {
@@ -29,6 +29,11 @@ class RecipeBook extends Component {
         })
     }
 
+    foodSwitchOff=()=>{
+        this.setState({
+            foodSwitch:false
+        })
+    }
 
     setBeers = (snapshot) => {
         const beersArray = Object.entries(snapshot)
@@ -45,16 +50,19 @@ class RecipeBook extends Component {
                     brewersTips: beery.brewers_tips,
                 })
             })
-        this.setState({
-            beersList: beersArray,
-            beersLeft: beersArray.length
-        })
-    }
-
-    displayFullRecipe = (beer) => {
-        if (beer == "nope") {
-
             this.setState({
+                beersList: beersArray,
+                beersLeft: beersArray.length,
+            })
+        }
+        
+        displayFullRecipe = (beer) => {
+            this.setState({
+                foodSwitch:true
+            })
+            if (beer == "nope") {
+                
+                this.setState({
                 beerName: null
             }, () => {
 
@@ -169,6 +177,8 @@ class RecipeBook extends Component {
                 {
                     this.state.beerName ?
                         <FullRecipe
+                            foodSwitchOff={this.foodSwitchOff}
+                            foodSwitch={this.state.foodSwitch}
                             beerName={this.state.beerName}
                             beerHops={this.state.beerHops}
                             beerMalts={this.state.beerMalts}
