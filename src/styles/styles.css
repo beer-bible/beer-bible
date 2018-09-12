@@ -955,6 +955,9 @@ body {
     @media (max-width: 1280px) {
       .food-module .foodPairingRecipes .food-item {
         border-radius: 20px; } }
+  @media (max-width: 375px) {
+    .food-module .foodPairingRecipes {
+      width: 80%; } }
   @media (max-width: 1280px) {
     .food-module .foodPairingRecipes .food-item:nth-of-type(3n) {
       display: none; } }
@@ -1012,7 +1015,9 @@ body {
     padding: 10px; }
     @media (max-width: 550px) {
       .food-module .foodPairingRecipes img {
-        width: 10%; } }
+        width: 100%;
+        padding: 0px;
+        border-radius: 10px 10px 0 0; } }
 
 .hideButton {
   display: none; }

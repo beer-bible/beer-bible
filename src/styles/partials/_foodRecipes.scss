@@ -30,6 +30,12 @@
                 border-radius:20px;
             }
         }
+        
+        @include breakpoint(mobileonly){
+                width:80%;
+            }
+
+
         @include breakpoint(desktop){
             .food-item:nth-of-type(3n){
                     display: none;
@@ -115,7 +121,9 @@
                 border-radius:10px;
                 padding:10px;
                 @include breakpoint(phablet){
-                    width:10%;
+                    width:100%;
+                    padding:0px;
+                    border-radius: 10px 10px 0 0;
                 }
             }
         }
