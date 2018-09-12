@@ -174,45 +174,8 @@ class RecipeBook extends Component {
                                     </div>
                                     <button onClick={() => this.deleteRecipe(beer.name)} id={beer.key}><i class="fas fa-trash-alt"></i></button>
                                 </div>
-<<<<<<< HEAD
-
-)
-})}
-                </aside>
-=======
-                            )
-                        })}
+                        )})}
                     </aside>
-                    {
-                        this.state.beerName ?
-                            <FullRecipe
-                                beerName={this.state.beerName}
-                                beerHops={this.state.beerHops}
-                                beerMalts={this.state.beerMalts}
-                                beerYeast={this.state.beerYeast}
-                                beerVolume={this.state.beerVolume}
-                                beerMethodMashTemp={this.state.beerMethodMashTemp}
-                                beerMethodMashDuration={this.state.beerMethodMashDuration}
-                                foodPairings={this.state.foodPairings}
-                                brewersTips={this.state.brewersTips} 
-                                />
-                            :
-                            <section className="full-recipe">
-                                <h3>Choose a Recipe to view!</h3>
-
-                                <div className="ask-dave">
-                                    <img src="/assets/dave.png" />
-                                    <h4>Click on dave for tips on the beer you choose to brew!</h4>
-                                </div>
-                            </section>
-            }
-                    <form action="" className="notes-box">
-                        <h3 className="notes-header">Notes</h3>
-                        <textarea type="text" name="notes" id="notes" placeholder="Notes from your brewing experience for this beer here..." onChange={this.handleChange} />
-                        <label htmlFor="notes" className="visually-hidden">enter the notes for your beer brewing experience here</label>
-                        <input type="submit" value="Save Note" className="save-note-button button" onClick={this.handleSave} />
-                    </form>
->>>>>>> dd9bc5cbdaf8e0ea5e55eac7fd25fc647551ede9
                 </div>
                 {
                     this.state.beerName ?

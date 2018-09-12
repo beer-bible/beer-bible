@@ -108,6 +108,7 @@
                 border-radius:10px;
                 padding:10px;
                 @include breakpoint(phablet){
+                    width:10%;
                 }
             }
         }
