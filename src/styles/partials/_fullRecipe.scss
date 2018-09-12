@@ -1,7 +1,11 @@
-.full-recipe h3{
-    @include breakpoint(desktop){
-            margin:0 10%;
-        }
+.full-recipe{
+    width:58%;
+    float:left;
+    margin-left:5%;
+    @include breakpoint(chromeBook){
+        width:90%;
+        margin:10px 5%;
+    }
 }
 .full-recipe ul {
     margin: 0;
@@ -9,9 +13,6 @@
     li {
         padding: 5px 0;
     }
-    @include breakpoint(desktop){
-            margin:0 10%;
-        }
 }
 
 .ask-dave {
@@ -19,10 +20,6 @@
     img {
         width: 50%;
         min-width:190px;
-        @include breakpoint(desktop){
-            width:30%;
-            margin:0 10%;
-        }
     }
     .brewer-tips-modal {
         display: none;

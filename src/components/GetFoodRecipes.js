@@ -10,8 +10,14 @@ export default class GetFoodRecipes extends Component{
             foodRecipeDisplay:[]
         }
     }
+
+
+    
     foodRecommendations = (foods) => {
-        document.getElementById("food-button").style.display = "none";
+        this.props.foodSwitchOff();
+        this.setState({
+            foodRecipeDisplay:[]
+        })
         const yummlyID = "?_app_id=1ca882d1";
         const yummlyKey = "&_app_key=9f727f501d139e3a8cc8a2bfebddaf3a";
         const yummlyUrl = `https://api.yummly.com/v1/api/recipes${yummlyID}${yummlyKey}`;
@@ -47,27 +53,36 @@ export default class GetFoodRecipes extends Component{
     render(){
         return(
             <div className="food-module">
+                {
+                    this.props.foodSwitch?
                 <button className="food-button" id="food-button" onClick={()=>this.foodRecommendations(this.props.foodPairings)}>
                     Get Food Pairing Ideas
-                </button>
+                </button>:
+                null
+                }
+                {
+                    !this.props.foodSwitch?
                 <ul className="foodPairingRecipes clearfix">
                 {this.state.foodRecipeDisplay.map((recipe) => {
                     return(
                             <li className="food-item">
-                            <h4>
-                                <a href={recipe.foodRecipeId}>
-                                {recipe.foodName.length>30? recipe.foodName.slice(0,30) + "...":recipe.foodName}
-                                </a></h4>
-                                <a href={recipe.foodRecipeId}>
-                                    <div className="foodImage">
-                                        <img src={recipe.foodImg} alt=""/>
-                                        <p className="foodImage-hoverText">Click for Recipe</p>
-                                    </div>
-                                </a>
+                                <h4>
+                                    <a target="_blank" href={recipe.foodRecipeId}>
+                                    {recipe.foodName.length>30? recipe.foodName.slice(0,30) + "...":recipe.foodName}
+                                    </a>
+                                </h4>
+                                <div className="foodImage">
+                                    <a target="_blank"href={recipe.foodRecipeId}>
+                                            <img src={recipe.foodImg} alt=""/>
+                                            <p className="foodImage-hoverText">Click for Recipe</p>
+                                    </a>
+                                </div>
                             </li>
                     )
                 })}
-                </ul>
+                </ul>:null
+                
+                }
             </div>
 
         )
