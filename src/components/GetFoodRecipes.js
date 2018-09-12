@@ -66,16 +66,17 @@ export default class GetFoodRecipes extends Component{
                 {this.state.foodRecipeDisplay.map((recipe) => {
                     return(
                             <li className="food-item">
-                            <h4>
-                                <a href={recipe.foodRecipeId}>
-                                {recipe.foodName.length>30? recipe.foodName.slice(0,30) + "...":recipe.foodName}
-                                </a></h4>
-                                <a href={recipe.foodRecipeId}>
-                                    <div className="foodImage">
-                                        <img src={recipe.foodImg} alt=""/>
-                                        <p className="foodImage-hoverText">Click for Recipe</p>
-                                    </div>
-                                </a>
+                                <h4>
+                                    <a target="_blank" href={recipe.foodRecipeId}>
+                                    {recipe.foodName.length>30? recipe.foodName.slice(0,30) + "...":recipe.foodName}
+                                    </a>
+                                </h4>
+                                <div className="foodImage">
+                                    <a target="_blank"href={recipe.foodRecipeId}>
+                                            <img src={recipe.foodImg} alt=""/>
+                                            <p className="foodImage-hoverText">Click for Recipe</p>
+                                    </a>
+                                </div>
                             </li>
                     )
                 })}

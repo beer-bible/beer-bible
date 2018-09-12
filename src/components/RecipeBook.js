@@ -162,7 +162,7 @@ class RecipeBook extends Component {
                     </div>
                 </div>
 
-                <div className="wrapper">
+                <div>
                     <aside className="beers-list">
                         {this.state.beersList.map((beer) => {
                             return (
@@ -173,12 +173,11 @@ class RecipeBook extends Component {
                                     </div>
                                     <button onClick={() => this.deleteRecipe(beer.name)} id={beer.key}><i class="fas fa-trash-alt"></i></button>
                                 </div>
-                                <button onClick={() => this.deleteRecipe(beer.name)} id={beer.key}><i class="fas fa-trash-alt"></i></button>
-                            </div>
 
-                        )
-                    })}
+)
+})}
                 </aside>
+                </div>
                 {
                     this.state.beerName ?
                         <FullRecipe

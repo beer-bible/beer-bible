@@ -721,6 +721,9 @@ body {
   position: fixed;
   z-index: 2;
   margin-bottom: 10px; }
+  @media (max-width: 375px) {
+    .recipe-book-header {
+      height: 140px; } }
 
 .wrapper-header {
   width: 90%;
@@ -756,7 +759,7 @@ body {
       .wrapper-header button {
         padding: 5px;
         width: 80%;
-        margin: 10px 0; } }
+        margin: 10px 10%; } }
   .wrapper-header h2 {
     float: left;
     margin-left: 50px;
@@ -769,14 +772,17 @@ body {
     @media (max-width: 550px) {
       .wrapper-header h2 {
         padding: 30px 20px 0 0;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        font-size: 21px; } }
     @media (max-width: 375px) {
       .wrapper-header h2 {
-        padding: 30px 0 0 0;
-        font-size: 20px; } }
+        padding: 10px 0 0 5%;
+        font-size: 25px; } }
     @media (max-width: 320px) {
       .wrapper-header h2 {
-        font-size: 20px; } }
+        font-size: 20px;
+        text-align: center;
+        width: 100%; } }
   .wrapper-header img {
     float: right;
     width: 120px;
@@ -788,28 +794,35 @@ body {
     @media (max-width: 550px) {
       .wrapper-header img {
         float: right;
-        padding-top: 15px;
+        width: 80px;
+        padding-top: 25px;
         margin: 0; } }
+    @media (max-width: 375px) {
+      .wrapper-header img {
+        float: left;
+        width: 60px;
+        padding-top: 0px;
+        margin: 0 0 0 5%; } }
+    @media (max-width: 320px) {
+      .wrapper-header img {
+        width: 60px;
+        margin: 0 calc((100% - 60px) / 2); } }
 
 .beers-list {
   float: right;
-  width: calc(35% - 10px);
+  width: 30%;
   height: 35vh;
   overflow: auto;
   background-color: #00778a;
   border-radius: 10px;
-  margin: 130px 0 0 10px; }
-  @media (max-width: 1280px) {
+  margin: 130px 5% 10px 0; }
+  @media (max-width: 960px) {
     .beers-list {
-      float: left;
-      width: 100%;
-      margin: 130px 0 10px 0;
-      padding: 0; } }
-  @media (max-width: 1280px) {
-    .beers-list .beer-box-wrapper {
-      float: left;
-      width: 80%;
-      margin: 3px 10%; } }
+      width: 90%;
+      margin: 130px 5% 0 5%; } }
+  @media (max-width: 375px) {
+    .beers-list {
+      margin: 150px 5% 0 5%; } }
   .beers-list .beer-box-wrapper .beer-box {
     background-color: white;
     cursor: pointer;
@@ -825,12 +838,6 @@ body {
       margin: 0;
       padding: 5px 10px;
       line-height: 4rem; }
-    @media (max-width: 1280px) {
-      .beers-list .beer-box-wrapper .beer-box {
-        float: left;
-        width: 80%;
-        margin: 0;
-        padding: 0; } }
   .beers-list .beer-box-wrapper button {
     background-color: white;
     border: 1px solid #00245b;
@@ -841,32 +848,22 @@ body {
     height: 50px; }
     @media (max-width: 1280px) {
       .beers-list .beer-box-wrapper button {
-        float: left;
-        width: 20%;
-        margin: 0 0 0 15px;
-        padding: 5px;
-        width: calc(10% - 15px); } }
-    @media (max-width: 1280px) {
-      .beers-list .beer-box-wrapper button {
-        margin-left: 5px;
-        width: 50px; } }
-    @media (max-width: 550px) {
-      .beers-list .beer-box-wrapper button {
-        width: 20%;
-        margin: 0;
-        padding: 0; } }
+        width: 13%;
+        padding: 4px; } }
 
 .notes-box {
+  font-size: 14px;
   background-color: #00778a;
   float: right;
-  width: calc(35% - 10px);
+  width: 30%;
   height: 45vh;
   padding: 25px;
-  margin: 10px 0 10px 10px;
+  margin: 10px 5% 10px 0px;
   border-radius: 10px; }
-  @media (max-width: 1280px) {
+  @media (max-width: 960px) {
     .notes-box {
-      width: 100%; } }
+      width: 90%;
+      margin: 10px 5%; } }
   .notes-box #notes {
     width: 100%;
     height: 70%;
@@ -886,11 +883,6 @@ body {
   margin-top: 130px;
   background-color: #ebeae5;
   border-radius: 10px; }
-  @media (max-width: 1280px) {
-    .full-recipe {
-      float: none;
-      clear: both;
-      width: 100%; } }
 
 .dave img {
   width: 70%;
@@ -909,13 +901,39 @@ body {
     margin-right: 5%;
     position: relative;
     background: #00778A;
-    opacity: 1;
-    transition: opacity 0.6s;
     padding: 0;
-    border: 8px solid #00778A;
     border-radius: 10px; }
-  .food-module .foodPairingRecipes .food-item:hover {
-    opacity: 0.9; }
+    @media (max-width: 1280px) {
+      .food-module .foodPairingRecipes .food-item {
+        width: 40%;
+        margin-bottom: 10px; } }
+    @media (max-width: 1280px) {
+      .food-module .foodPairingRecipes .food-item {
+        border-radius: 20px; } }
+  @media (max-width: 1280px) {
+    .food-module .foodPairingRecipes .food-item:nth-of-type(3n) {
+      display: none; } }
+  @media (max-width: 960px) {
+    .food-module .foodPairingRecipes .food-item:nth-of-type(3n) {
+      display: block; } }
+  @media (max-width: 960px) {
+    .food-module .foodPairingRecipes .food-item {
+      width: 30%; } }
+  @media (max-width: 768px) {
+    .food-module .foodPairingRecipes .food-item {
+      width: 45%; } }
+  @media (max-width: 768px) {
+    .food-module .foodPairingRecipes .food-item:nth-of-type(3n) {
+      display: none; } }
+  @media (max-width: 550px) {
+    .food-module .foodPairingRecipes .food-item {
+      width: 60%; } }
+  @media (max-width: 375px) {
+    .food-module .foodPairingRecipes .food-item {
+      width: 100%; } }
+  @media (max-width: 550px) {
+    .food-module .foodPairingRecipes .food-item:nth-of-type(2n) {
+      display: none; } }
   .food-module .foodPairingRecipes .food-item:last-of-type {
     margin-right: 0; }
   .food-module .foodPairingRecipes .food-item h4 {
@@ -928,39 +946,49 @@ body {
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.6s; }
+  .food-module .foodPairingRecipes .foodImage {
+    background: #00778A;
+    opacity: 1;
+    transition: opacity 0.6s;
+    border-radius: 10px;
+    overflow: hidden; }
+    .food-module .foodPairingRecipes .foodImage p {
+      padding-left: 10px; }
+  .food-module .foodPairingRecipes .food-item:hover > .foodImage {
+    opacity: 0.2; }
   .food-module .foodPairingRecipes .food-item:hover > h4 {
     opacity: 1; }
   .food-module .foodPairingRecipes .food-item a {
     text-decoration: none;
     color: white; }
   .food-module .foodPairingRecipes img {
-    width: 100%; }
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px; }
 
 .hideButton {
   display: none; }
 
-@media (max-width: 1280px) {
-  .full-recipe h3 {
-    margin: 0 10%; } }
+.full-recipe {
+  width: 58%;
+  float: left;
+  margin-left: 5%; }
+  @media (max-width: 960px) {
+    .full-recipe {
+      width: 90%;
+      margin: 10px 5%; } }
 
 .full-recipe ul {
   margin: 0;
   padding: 0; }
   .full-recipe ul li {
     padding: 5px 0; }
-  @media (max-width: 1280px) {
-    .full-recipe ul {
-      margin: 0 10%; } }
 
 .ask-dave {
   position: relative; }
   .ask-dave img {
     width: 50%;
     min-width: 190px; }
-    @media (max-width: 1280px) {
-      .ask-dave img {
-        width: 30%;
-        margin: 0 10%; } }
   .ask-dave .brewer-tips-modal {
     display: none;
     background-image: url(/assets/speech-bubble.png);
